@@ -23,7 +23,7 @@ class Controler
             );
             array_push($arreglo['tasks'],$info);
         }
-        $this->printJSON(["data" => $result]);
+        $this->printJSON($arreglo);
     }
     function error($mensaje)
     {
