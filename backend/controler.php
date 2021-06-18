@@ -21,7 +21,7 @@ class Controler
                     "description"=>$document['description'],
                     "date"=>$document['date']
             );
-            array_push($arreglo);
+            array_push($arreglo['tasks'],$info);
         }
         $this->printJSON(["data" => $result]);
     }
