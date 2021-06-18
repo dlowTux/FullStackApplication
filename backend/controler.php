@@ -10,17 +10,17 @@ class Controler
     }
     function error($mensaje)
     {
-        echo json_encode(["mensaje" => $mensaje]);
+        return json_encode(["mensaje" => $mensaje]);
     }
 
     function exito($mensaje)
     {
-        echo json_encode(["mensaje" => $mensaje]);
+        return json_encode(["mensaje" => $mensaje]);
     }
 
     function printJSON($array)
     {
-        echo json_encode($array);
+        return json_encode($array);
     }
 }
 

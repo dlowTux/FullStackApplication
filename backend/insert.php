@@ -6,5 +6,7 @@ if (isset($_GET["title"]) && isset($_GET["description"]) && isset($_GET['date'])
     $description=$_GET['description'];
     $date=$_GET['date'];
     $task->SavaTask($title,$description,$date);
+}else{
+$task->error('Error !!');
 }
 ?>
