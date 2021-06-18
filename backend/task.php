@@ -10,7 +10,11 @@ class Task extends DB
             "date" => $date,
         ];
 
-        $query = $this->connect()->insertOne($document);
+        $this->connect()->insertOne($document);
+    }
+    function GetTask()
+    {
+        return $this->connect()->find();
     }
 }
 ?>

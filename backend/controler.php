@@ -8,6 +8,12 @@ class Controler
         $task->SavaTask($title, $description, $date);
         $this->exito("The task was saved successfully");
     }
+    function GetTasks(){
+        $task= new Task();
+        $result=$task->GetTask();
+        $this->printJSON(["data"=>$result]);
+
+    }
     function error($mensaje)
     {
         echo json_encode(["mensaje" => $mensaje]);
