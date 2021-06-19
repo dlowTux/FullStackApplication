@@ -27,10 +27,11 @@ class Controler
                 echo '</td>';                                
                 echo '<td>';                                 
                 echo '                                           
-<button type="button" class="btn btn-success">Update</button>    
-<br>                                                             
-<a href="172.17.0.2/FullStackApplication/DeleteTask.php?title='.$document['title'].'" type="button" class="btn btn-danger mt-3">Delete</a>
-';                           
+                    <a href="UpdateTask.php?title='.$document['title'].'&&description='.$document["description"].'&&date='.$document['date'].'" type="button" class="btn btn-success">Update</a>    
+<br> 
+<a href="DeleteTask.php?title='.$document['title'].'" type="button" class="btn btn-danger mt-3">Delete</a>                                
+';
+                         
                 echo '</td>';
                              
                 echo '</tr>';
