@@ -8,9 +8,9 @@
 
 <body>
     <script>
-        fetch('http://localhost/FullStackApplication/GetTask.php', {
+        fetch('./GetTask.php', {
             method: 'GET'
-        }).then(respose => console.log(respose))
+        }).then(response => response.json()).then(r => console.log(r))
     </script>
 </body>
 
