@@ -8,26 +8,38 @@ class Controler
         $task->SavaTask($title, $description, $date);
         return $this->exito("The task was saved successfully");
     }
-    function GetTasks()
-    {
-        $task = new Task();
-        $result = $task->GetTask();
-        $tabla = "";
+      function GetTasks()    
+    {                              
+        $task = new Task();        
+        $result = $task->GetTask();     
         foreach ($result as $document) {
-            $tabla += '<tr>
-                <td>'.$document["title"].'</td>
-                <td>'.$document["description"].'</td>
-                <td>'.$document["date"].'</td>
-            <tr>';
-            /*        $info = [
-                "id" => $document["_id"],
-                "title" => $document["title"],
-                "description" => $document["description"],
-                "date" => $document["date"],
-    ];*/
+                echo '<tr>';            
+                echo '<td>';            
+                echo $document["title"];      
+                echo '</td>';                 
+                echo '<td>';                  
+                echo $document["description"];
+                                          
+                echo '</td>';             
+                echo '<td>';              
+                echo    $document["date"];
+                             
+                echo '</td>';                                
+                echo '<td>';                                 
+                echo '                                           
+<button type="button" class="btn btn-success">Update</button>    
+<br>                                                             
+<button type="button" class="btn btn-danger mt-3">Delete</button>
+';                           
+                echo '</td>';
+                             
+                echo '</tr>';
+         
+                      
         }
-        return $tabla;
+     
     }
+    
     function DeleteTask($title)
     {
         $task = new Task();
