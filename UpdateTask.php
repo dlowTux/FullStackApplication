@@ -28,6 +28,7 @@ echo ' <form method="POST", action="UpdateTask.php">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Title</label>
                       <input name="txttitle" type="text" class="form-control" value="'.$title.'"/>
+<input name="oldtitle" type="text" class="form-control" hidden value="'.$title.'"/>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Description</label>
@@ -54,10 +55,10 @@ echo ' <form method="POST", action="UpdateTask.php">
 include_once 'controler.php';
 $task=new Controler();
 if(isset($_POST["btnSubmit"])){
+$title=$_POST['oldtitle'];
     $ntitle=$_POST['txttitle'];
     $description=$_POST['txtdescription'];
     $date=$_POST['txtdate'];
-
     $data=array(
         'title'=>$ntitle,
         'description'=>$description,
@@ -72,3 +73,4 @@ if(isset($_POST["btnSubmit"])){
 
 
 ?>
+
