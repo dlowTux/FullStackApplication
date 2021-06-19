@@ -12,18 +12,21 @@ class Controler
     {
         $task = new Task();
         $result = $task->GetTask();
-        $arreglo = [];
-        $arreglo["tasks"] = [];
+        $tabla = "";
         foreach ($result as $document) {
-            $info = [
+            $tabla += '<tr>
+                <td>'.$document["title"].'</td>
+                <td>'.$document["description"].'</td>
+                <td>'.$document["date"].'</td>
+            <tr>';
+            /*        $info = [
                 "id" => $document["_id"],
                 "title" => $document["title"],
                 "description" => $document["description"],
                 "date" => $document["date"],
-            ];
-            array_push($arreglo["tasks"], $info);
+    ];*/
         }
-       return $this->printJSON($arreglo);
+        return $tabla;
     }
     function DeleteTask($title)
     {
@@ -39,7 +42,7 @@ class Controler
     }
     function error($mensaje)
     {
-         return json_encode(["mensaje" => $mensaje]);
+        return json_encode(["mensaje" => $mensaje]);
     }
 
     function exito($mensaje)

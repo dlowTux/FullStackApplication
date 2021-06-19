@@ -45,6 +45,7 @@
         </div>
         <br />
         <table class="table">
+
             <thead>
                 <tr>
                     <th scope="col">Title</th>
@@ -53,7 +54,12 @@
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
-            <tbody id="table"></tbody>
+            <tbody id="table">
+<?php 
+include_once 'GetTask.php'
+
+?>
+</tbody>
         </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
