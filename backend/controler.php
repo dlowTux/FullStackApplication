@@ -12,18 +12,24 @@ class Controler
     {
         $task = new Task();
         $result = $task->GetTask();
-          $arreglo=array();
-         $arreglo["tasks"]=array();
+        $arreglo = [];
+        $arreglo["tasks"] = [];
         foreach ($result as $document) {
-                $info=array(
-                    "id"=>$document['_id'],
-                    "title"=>$document['title'],
-                    "description"=>$document['description'],
-                    "date"=>$document['date']
-            );
-            array_push($arreglo['tasks'],$info);
+            $info = [
+                "id" => $document["_id"],
+                "title" => $document["title"],
+                "description" => $document["description"],
+                "date" => $document["date"],
+            ];
+            array_push($arreglo["tasks"], $info);
         }
         $this->printJSON($arreglo);
+    }
+    function DeleteTask($id)
+    {
+        $task = new Task();
+        $task->DeletTask($id);
+        echo $this->exito("Task delete");
     }
     function error($mensaje)
     {
