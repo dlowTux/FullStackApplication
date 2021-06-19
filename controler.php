@@ -6,7 +6,7 @@ class Controler
     {
         $task = new Task();
         $task->SavaTask($title, $description, $date);
-        return $this->exito("The task was saved successfully");
+    
     }
       function GetTasks()    
     {                              

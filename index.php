@@ -28,22 +28,41 @@
                 <form method="POST", action="insert.php">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Title</label>
-                        <input id="txttitle" type="text" class="form-control" />
+                        <input name="txttitle" type="text" class="form-control" />
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Description</label>
-                        <input type="text" class="form-control" id="txtdescription" />
+                        <input type="text" class="form-control" name="txtdescription" />
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Date</label>
-                        <input type="date" class="form-control" id="txtdate" />
+                        <input type="date" class="form-control" name="txtdate" />
                     </div>
 
                     <input type="submit" class="btn btn-primary" value="Submit" name='btnSubmit' />
                 </form>
             </div>
             <div class="col">
-                <div id="mensajes" class="mensajes"></div>
+                <div id="mensajes" class="mensajes">
+<?php
+if(isset($_POST['btnSubmit'])){
+include_once 'controler.php';
+$task=new Controler();
+if (isset($_POST["txttitle"]) && isset($_POST["txtdescription"]) && isset($_POST['txtdate']) ){
+    $title=$_POST['txttitle'];
+    $description=$_POST['txtdescription'];
+    $date=$_POST['txtdate'];
+    $task->SavaTask($title,$description,$date);
+    echo '<div class="alert alert-success" role="alert">
+    The task was saved successfully
+    </div>';
+}else{
+    echo '<div class="alert alert-danger" role="alert">
+    Error task was not saved
+    </div>';
+}
+?>
+</div>
             </div>
         </div>
         <br />
