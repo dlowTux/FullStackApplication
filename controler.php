@@ -29,7 +29,7 @@ class Controler
                 echo '                                           
 <button type="button" class="btn btn-success">Update</button>    
 <br>                                                             
-<button type="button" class="btn btn-danger mt-3">Delete</button>
+<a href="172.17.0.2/FullStackApplication/DeleteTask.php?title='.$document['title'].'" type="button" class="btn btn-danger mt-3">Delete</a>
 ';                           
                 echo '</td>';
                              

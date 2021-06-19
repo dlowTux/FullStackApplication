@@ -25,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form method="POST", action="insert.php">
+                <form method="POST", action="index.php">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Title</label>
                         <input name="txttitle" type="text" class="form-control" />
@@ -60,6 +60,7 @@ if (isset($_POST["txttitle"]) && isset($_POST["txtdescription"]) && isset($_POST
     echo '<div class="alert alert-danger" role="alert">
     Error task was not saved
     </div>';
+}
 }
 ?>
 </div>
