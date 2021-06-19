@@ -1,5 +1,8 @@
 <?php
-
+  $title=$_GET['title'];
+    $description=$_GET['description'];
+    $date=$_GET['date'];
+echo $title.$description.$date;
 /*include_once 'controler.php';
 $task=new Controler();
 if (isset($_GET['oldtitle']) && isset($_GET["title"]) && isset($_GET["description"]) && isset($_GET['date']) ){
