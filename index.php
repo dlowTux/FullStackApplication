@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form>
+                <form method="POST", action="insert.php">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Title</label>
                         <input id="txttitle" type="text" class="form-control" />
@@ -36,7 +39,7 @@
                         <input type="date" class="form-control" id="txtdate" />
                     </div>
 
-                    <input type="submit" class="btn btn-primary" value="Submit" id="boton" />
+                    <input type="submit" class="btn btn-primary" value="Submit" name='btnSubmit' />
                 </form>
             </div>
             <div class="col">
