@@ -25,10 +25,10 @@ class Controler
         }
         $this->printJSON($arreglo);
     }
-    function DeleteTask($id)
+    function DeleteTask($title)
     {
         $task = new Task();
-        $task->DeletTask($id);
+        $task->DeletTask($title);
         echo $this->exito("Task delete");
     }
     function error($mensaje)

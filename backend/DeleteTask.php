@@ -1,9 +1,9 @@
 <?php
 include_once "controler.php";
 $task = new Controler();
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
-    $task->DeleteTask($id);
+if (isset($_GET["title"])) {
+    $title = $_GET["title"];
+    $task->DeleteTask($title);
 } else {
     $task->error("Error");
 }

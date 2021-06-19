@@ -16,9 +16,9 @@ class Task extends DB
     {
         return $this->connect()->find();
     }
-    function DeletTask($id)
+    function DeletTask($title)
     {
-        $this->connect()->deleteOne(["_id" => $id]);
+        $this->connect()->deleteOne(["title" => $title]);
     }
     function Update($id, $data)
     {
