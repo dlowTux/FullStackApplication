@@ -6,7 +6,7 @@ class Controler
     {
         $task = new Task();
         $task->SavaTask($title, $description, $date);
-        $this->exito("The task was saved successfully");
+        return $this->exito("The task was saved successfully");
     }
     function GetTasks()
     {
@@ -23,33 +23,33 @@ class Controler
             ];
             array_push($arreglo["tasks"], $info);
         }
-        $this->printJSON($arreglo);
+       return $this->printJSON($arreglo);
     }
     function DeleteTask($title)
     {
         $task = new Task();
         $task->DeletTask($title);
-        echo $this->exito("Task delete");
+        return $this->exito("Task delete");
     }
     function Update($title, $data)
     {
         $task = new Task();
         $task->Update($title, $data);
-        echo $this->exito("Task update");
+        return $this->exito("Task update");
     }
     function error($mensaje)
     {
-        echo json_encode(["mensaje" => $mensaje]);
+         return json_encode(["mensaje" => $mensaje]);
     }
 
     function exito($mensaje)
     {
-        echo json_encode(["mensaje" => $mensaje]);
+        return json_encode(["mensaje" => $mensaje]);
     }
 
     function printJSON($array)
     {
-        echo json_encode($array);
+        return json_encode($array);
     }
 }
 
