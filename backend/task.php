@@ -20,9 +20,9 @@ class Task extends DB
     {
         $this->connect()->deleteOne(["title" => $title]);
     }
-    function Update($id, $data)
+    function Update($title, $data)
     {
-        $this->connect()->updateMany(["_id" => $id], ['$set' => $data]);
+        $this->connect()->updateMany(["title" => $title], ['$set' => $data]);
     }
 }
 ?>

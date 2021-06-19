@@ -31,6 +31,12 @@ class Controler
         $task->DeletTask($title);
         echo $this->exito("Task delete");
     }
+    function Update($title, $data)
+    {
+        $task = new Task();
+        $task->Update($title, $data);
+        echo $this->exito("Task update");
+    }
     function error($mensaje)
     {
         echo json_encode(["mensaje" => $mensaje]);
